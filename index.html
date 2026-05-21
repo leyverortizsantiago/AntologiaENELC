@@ -4,24 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>📚 Antología de Cuentos y Fábulas — 2° Grado</title>
 <style>
     /* ── RESET & BASE ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --orange:  #FF7043;
-      --blue:    #29B6F6;
-      --green:   #66BB6A;
-      --purple:  #AB47BC;
-      --yellow:  #FFCA28;
-      --red:     #EF5350;
-      --teal:    #26C6DA;
-      --pink:    #EC407A;
-      --indigo:  #5C6BC0;
-      --lime:    #D4E157;
-      --bg:      #FFF8F0;
-      --card-r:  18px;
-    }
+    
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', 'Comic Sans MS', Tahoma, sans-serif;
@@ -38,7 +24,7 @@
     .star {
       position: absolute;
       border-radius: 50%;
-      background: rgba(255,202,40,0.55);
+      background: rgba(200,134,10,0.35);
       animation: twinkle 3s infinite alternate;
     }
     @keyframes twinkle {
@@ -46,14 +32,7 @@
       to   { opacity: 1;   transform: scale(1.2); }
     }
 
-    /* ── HERO ─────────────────────────────────────────────────── */
-    .hero {
-      position: relative; z-index: 1;
-      background: linear-gradient(135deg, #FF7043 0%, #FFCA28 40%, #29B6F6 100%);
-      text-align: center;
-      padding: 70px 20px 90px;
-      clip-path: ellipse(100% 88% at 50% 12%);
-    }
+    
     .hero-emoji { font-size: 5rem; display: block; animation: bounce 1.6s infinite; }
     @keyframes bounce {
       0%,100% { transform: translateY(0); }
@@ -61,38 +40,19 @@
     }
     .hero h1 {
       font-size: clamp(2rem, 6vw, 3.8rem);
-      color: #fff;
-      text-shadow: 3px 3px 0 rgba(0,0,0,.18);
+      color: #FFD700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,.5);
       margin: 14px 0 8px;
       line-height: 1.15;
     }
     .hero p {
-      font-size: 1.2rem; color: #fff3e0;
+      font-size: 1.2rem; color: #E8F0FF;
       max-width: 560px; margin: 0 auto 28px;
     }
-    .hero-badge {
-      display: inline-block;
-      background: #fff;
-      color: var(--orange);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 8px 22px;
-      border-radius: 50px;
-      box-shadow: 0 4px 14px rgba(0,0,0,.15);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 4px 14px rgba(0,0,0,.15); }
-      50%      { box-shadow: 0 4px 28px rgba(255,112,67,.5); }
-    }
+    
 
     /* ── PROGRESS BAR ─────────────────────────────────────────── */
-    #progress-bar {
-      position: fixed; top: 0; left: 0; height: 5px;
-      background: linear-gradient(90deg, var(--orange), var(--yellow));
-      width: 0%; z-index: 999;
-      transition: width .2s;
-    }
+    
 
     /* ── NAV DOTS ─────────────────────────────────────────────── */
     .nav-dots {
@@ -105,7 +65,7 @@
       transition: background .3s, transform .3s;
       border: none;
     }
-    .nav-dot.active { background: var(--orange); transform: scale(1.4); }
+    
 
     /* ── SECTION WRAPPER ──────────────────────────────────────── */
     .section-wrapper {
@@ -115,14 +75,7 @@
     }
 
     /* ── SECTION TITLE ────────────────────────────────────────── */
-    .section-title {
-      text-align: center;
-      font-size: 1.9rem;
-      font-weight: 800;
-      margin: 50px 0 30px;
-      color: #444;
-    }
-    .section-title span { color: var(--orange); }
+    
 
     /* ── STORY CARDS GRID ─────────────────────────────────────── */
     .cards-grid {
@@ -152,12 +105,7 @@
       width: 100%; height: 100%; object-fit: cover;
       transition: transform .4s;
     }
-    .card-num {
-      position: absolute; top: 10px; left: 10px;
-      background: var(--orange); color: #fff;
-      font-weight: 800; font-size: .85rem;
-      padding: 4px 10px; border-radius: 20px;
-    }
+    
     .card-type-badge {
       position: absolute; top: 10px; right: 10px;
       background: rgba(0,0,0,.55); color: #fff;
@@ -167,24 +115,14 @@
     .card-emoji { font-size: 1.6rem; }
     .card-title {
       font-size: 1.05rem; font-weight: 700;
-      margin: 6px 0 4px; color: #222;
+      margin: 6px 0 4px; color: #0D2347;
     }
     .card-value {
       font-size: .82rem; color: #888;
       display: flex; align-items: center; gap: 5px;
     }
     .card-value::before { content: '💡'; }
-    .card-btn {
-      display: inline-block;
-      margin-top: 12px;
-      background: var(--orange);
-      color: #fff; border: none;
-      padding: 8px 18px; border-radius: 30px;
-      font-size: .88rem; font-weight: 700;
-      cursor: pointer;
-      transition: background .2s, transform .15s;
-    }
-    .card-btn:hover { background: #e64a19; transform: scale(1.05); }
+    
 
     /* ── MODAL ────────────────────────────────────────────────── */
     .modal-overlay {
@@ -240,7 +178,7 @@
     .modal-body { padding: 24px 28px 32px; }
     .modal-badge {
       display: inline-block;
-      background: #FFF3E0; color: var(--orange);
+      background: #F5F0E0; color: #C8860A;
       font-size: .8rem; font-weight: 700;
       padding: 4px 12px; border-radius: 20px;
       margin-bottom: 16px;
@@ -255,17 +193,7 @@
       color: #1565C0;
       font-style: italic;
     }
-    .moraleja-box {
-      margin-top: 24px;
-      background: linear-gradient(135deg, #FFF8E1, #FFF3E0);
-      border-left: 5px solid var(--orange);
-      border-radius: 12px;
-      padding: 16px 20px;
-    }
-    .moraleja-box .label {
-      font-weight: 800; color: var(--orange);
-      font-size: .95rem; margin-bottom: 6px;
-    }
+    
     .moraleja-box p {
       font-style: italic; color: #555; font-size: .95rem; line-height: 1.7;
     }
@@ -273,24 +201,11 @@
       display: flex; justify-content: space-between;
       margin-top: 24px; gap: 10px;
     }
-    .modal-nav-btn {
-      flex: 1; padding: 10px;
-      border: 2px solid var(--orange); background: #fff;
-      color: var(--orange); font-weight: 700;
-      border-radius: 30px; cursor: pointer;
-      transition: all .2s;
-    }
-    .modal-nav-btn:hover { background: var(--orange); color: #fff; }
+    
 
     /* ── VALUES SECTION ───────────────────────────────────────── */
-    .values-section {
-      background: linear-gradient(135deg, #E3F2FD, #F3E5F5);
-      border-radius: 24px;
-      padding: 40px 30px;
-      margin: 40px 0;
-      text-align: center;
-    }
-    .values-section h2 { font-size: 1.7rem; color: #333; margin-bottom: 24px; }
+    
+    .values-section h2 { font-size: 1.7rem; color: #0D2347; font-weight: 800; margin-bottom: 24px; }
     .values-grid {
       display: flex; flex-wrap: wrap;
       gap: 14px; justify-content: center;
@@ -308,14 +223,9 @@
     .value-chip:hover { transform: scale(1.08); }
 
     /* ── QUIZ SECTION ─────────────────────────────────────────── */
-    .quiz-section {
-      background: linear-gradient(135deg, #E8F5E9, #FFF9C4);
-      border-radius: 24px;
-      padding: 40px 30px;
-      margin: 40px 0;
-    }
-    .quiz-section h2 { font-size: 1.7rem; color: #333; margin-bottom: 6px; text-align: center; }
-    .quiz-section .subtitle { text-align: center; color: #666; margin-bottom: 28px; }
+    
+    .quiz-section h2 { font-size: 1.7rem; color: #0D2347; font-weight: 800; margin-bottom: 6px; text-align: center; }
+    .quiz-section .subtitle { text-align: center; color: #3A5A8A; margin-bottom: 28px; }
     .quiz-card {
       background: #fff;
       border-radius: 16px;
@@ -345,35 +255,37 @@
       display: flex; justify-content: space-between;
       align-items: center; margin-top: 20px;
     }
-    .quiz-score { font-weight: 700; color: var(--orange); font-size: 1rem; }
-    .quiz-next-btn {
-      background: var(--orange); color: #fff;
-      border: none; border-radius: 30px;
-      padding: 10px 24px; font-size: .95rem; font-weight: 700;
-      cursor: pointer; transition: background .2s;
-    }
-    .quiz-next-btn:hover { background: #e64a19; }
+    
+    
     .quiz-progress {
       height: 6px; background: #eee; border-radius: 10px;
       margin-bottom: 20px; overflow: hidden;
     }
-    .quiz-progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--green), var(--blue));
-      border-radius: 10px;
-      transition: width .4s;
-    }
+    
+
+    
 
     /* ── FOOTER ───────────────────────────────────────────────── */
     footer {
       position: relative; z-index: 1;
-      background: linear-gradient(135deg, #FF7043, #FFCA28);
+      background: linear-gradient(135deg, #0D2347 0%, #1A3A6B 50%, #0D2347 100%);
+      border-top: 4px solid #C8860A;
       text-align: center;
       padding: 40px 20px;
       color: #fff;
     }
-    footer h3 { font-size: 1.5rem; margin-bottom: 8px; }
-    footer p  { font-size: .95rem; opacity: .9; }
+    footer h3 { font-size: 1.5rem; margin-bottom: 8px; font-weight: 800; color: #FFD700; }
+    footer p  { font-size: .95rem; color: #B0C4DE; }
+    footer .footer-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: #C8860A;
+      color: #fff;
+      font-size: .8rem; font-weight: 700;
+      padding: 6px 18px; border-radius: 30px;
+      border: 1px solid #FFD700;
+      box-shadow: 0 2px 8px rgba(200,134,10,.4);
+    }
 
     /* ── FLOATING EMOJIS ──────────────────────────────────────── */
     .float-emoji {
@@ -391,16 +303,7 @@
       display: flex; gap: 10px; justify-content: center;
       flex-wrap: wrap; margin-bottom: 28px;
     }
-    .rtab {
-      padding: 10px 22px; border-radius: 30px;
-      border: 2px solid var(--orange);
-      background: #fff; color: var(--orange);
-      font-weight: 700; font-size: .9rem;
-      cursor: pointer; transition: all .2s;
-    }
-    .rtab.active, .rtab:hover {
-      background: var(--orange); color: #fff;
-    }
+    
     .rutina-panel { display: none; }
     .rutina-panel.active { display: block; }
 
@@ -410,17 +313,7 @@
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 18px; margin-bottom: 40px;
     }
-    .rutina-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 22px 20px;
-      box-shadow: 0 5px 18px rgba(0,0,0,.08);
-      cursor: pointer;
-      transition: transform .22s, box-shadow .22s;
-      border-top: 5px solid var(--orange);
-      position: relative;
-      overflow: hidden;
-    }
+    
     .rutina-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -440,11 +333,7 @@
       display: flex; gap: 8px; flex-wrap: wrap;
       margin-bottom: 10px;
     }
-    .rutina-tag {
-      font-size: .72rem; font-weight: 700;
-      padding: 3px 10px; border-radius: 20px;
-      background: #FFF3E0; color: var(--orange);
-    }
+    
     .rutina-tag.blue  { background: #E3F2FD; color: #1565C0; }
     .rutina-tag.green { background: #E8F5E9; color: #2E7D32; }
     .rutina-tag.purple{ background: #F3E5F5; color: #6A1B9A; }
@@ -452,14 +341,7 @@
       font-size: .85rem; color: #666; line-height: 1.5;
       margin-bottom: 14px;
     }
-    .rutina-btn {
-      display: inline-block;
-      background: var(--orange); color: #fff;
-      border: none; border-radius: 30px;
-      padding: 7px 18px; font-size: .85rem; font-weight: 700;
-      cursor: pointer; transition: background .2s;
-    }
-    .rutina-btn:hover { background: #e64a19; }
+    
 
     /* ── TIMER MODAL ──────────────────────────────────────────── */
     .timer-overlay {
@@ -492,29 +374,15 @@
       margin: 0 auto 18px;
     }
     .timer-circle svg { width: 100%; height: 100%; }
-    .timer-num {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.4rem; font-weight: 900; color: var(--orange);
-    }
-    .timer-steps {
-      text-align: left; margin-bottom: 18px;
-      background: #FFF8F0; border-radius: 12px;
-      padding: 12px 16px;
-    }
-    .timer-steps p {
-      font-size: .85rem; color: #555; margin-bottom: 5px;
-      display: flex; align-items: flex-start; gap: 8px;
-    }
-    .timer-steps p::before { content: '▸'; color: var(--orange); flex-shrink: 0; }
+    
+    
     .timer-controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 12px; }
     .tbtn {
       padding: 10px 22px; border-radius: 30px;
       font-size: .9rem; font-weight: 700; cursor: pointer;
       border: none; transition: all .2s;
     }
-    .tbtn-start  { background: var(--orange); color: #fff; }
-    .tbtn-start:hover  { background: #e64a19; }
+    
     .tbtn-reset  { background: #f5f5f5; color: #555; }
     .tbtn-reset:hover  { background: #eee; }
     .timer-msg { font-size: 1rem; font-weight: 700; min-height: 26px; color: var(--green); }
@@ -523,6 +391,69 @@
     @media (max-width: 600px) {
       .nav-dots { display: none; }
       .modal-body { padding: 18px 16px 24px; }
+    }
+
+    /* ── HEADER INSTITUCIONAL ─────────────────────────────────── */
+    .inst-header {
+      position: relative; z-index: 10;
+      background: linear-gradient(135deg, rgba(13,35,71,.95) 0%, rgba(26,58,107,.92) 50%, rgba(13,35,71,.95) 100%);
+      border-bottom: 3px solid #C8860A;
+      padding: 14px 24px;
+      box-shadow: 0 3px 16px rgba(0,0,0,.4);
+      overflow: hidden;
+    }
+    .inst-header::before {
+      content: '';
+      position: absolute;
+      top: 50%; right: 20px;
+      transform: translateY(-50%);
+      width: 76px; height: 76px;
+      background: url( + logo_src + ) center/contain no-repeat;
+      opacity: .13;
+      pointer-events: none;
+    }
+    .inst-header::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url( + logo_src + ) center/auto 140% no-repeat;
+      opacity: .035;
+      pointer-events: none;
+    }
+    .inst-header-inner {
+      position: relative; z-index: 1;
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center;
+    }
+    .inst-info { flex: 1; }
+    .inst-name {
+      font-size: .92rem; font-weight: 800;
+      color: #FFD700;
+      letter-spacing: .5px;
+      margin-bottom: 2px;
+      font-family: 'Segoe UI', Georgia, serif;
+      text-transform: uppercase;
+    }
+    .inst-sub {
+      font-size: .68rem; color: #A8C0E0;
+      margin-bottom: 1px;
+      font-style: italic;
+      letter-spacing: .15px;
+    }
+    .inst-details {
+      display: flex; flex-wrap: wrap; gap: 4px 8px;
+      margin-top: 6px;
+    }
+    .inst-details span {
+      font-size: .66rem; color: #E8D5A3;
+      background: rgba(200,134,10,.18);
+      padding: 2px 9px; border-radius: 20px;
+      border: 1px solid rgba(200,134,10,.35);
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .inst-name { font-size: .78rem; }
+      .inst-details span { font-size: .6rem; }
+      .inst-header::before { width: 50px; height: 50px; right: 8px; }
     }
   </style>
 </head>
@@ -536,9 +467,25 @@
 <!-- ══════════════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════════════ -->
+<!-- HEADER INSTITUCIONAL -->
+<header class="inst-header" id="inst-header">
+<div class="inst-header-inner">
+<div class="inst-info">
+<div class="inst-name">Escuela Normal Experimental Lázaro Cárdenas</div>
+<div class="inst-sub">Clave: 20DNL0007L  ·  Putla Villa de Guerrero, Oaxaca  ·  50 Aniversario 1976–2026</div>
+<div class="inst-sub">Año 2025 — Bicentenario de la primera Constitución Política del Estado libre y soberano de Oaxaca</div>
+<div class="inst-details">
+<span>📘 Lic. Educación Primaria</span>
+<span>📋 Análisis de prácticas y contextos escolares</span>
+<span>👨‍🏫 Profr. Enrique Leal Ramírez</span>
+<span>🎓 Leyver Richard Ortiz Santiago · 2° Sem. "B"</span>
+</div>
+</div>
+</div>
+</header>
 <section class="hero" id="sec-hero">
 <span class="hero-emoji">📚</span>
-<h1>Antología de Cuentos y Fábulas</h1>
+<h1>Antología de Fábulas y Cuentos</h1>
 <p>30 historias llenas de aventuras, valores y mucha imaginación</p>
 <span class="hero-badge">✨ Para niños de 2° grado de primaria · 10 Cuentos · 10 Fábulas · 10 Originales ✨</span>
 </section>
@@ -621,7 +568,7 @@
 <div class="timer-circle">
 <svg viewbox="0 0 120 120">
 <circle cx="60" cy="60" fill="none" r="52" stroke="#eee" stroke-width="10"></circle>
-<circle cx="60" cy="60" fill="none" id="timer-ring" r="52" stroke="var(--orange)" stroke-dasharray="326.7" stroke-dashoffset="0" stroke-linecap="round" stroke-width="10" transform="rotate(-90 60 60)"></circle>
+<circle cx="60" cy="60" fill="none" id="timer-ring" r="52" stroke="#C8860A" stroke-dasharray="326.7" stroke-dashoffset="0" stroke-linecap="round" stroke-width="10" transform="rotate(-90 60 60)"></circle>
 </svg>
 <div class="timer-num" id="timer-num">30</div>
 </div>
@@ -641,6 +588,8 @@
 <h3>📖 ¡Sigue leyendo, sigue soñando! 📖</h3>
 <p>Cada libro que lees es una aventura nueva que te espera.</p>
 <p style="margin-top:10px;font-size:1.5rem">🌟 🦁 🐢 🐜 🦊 🌻 🐘 🐷 🦢 ⭐</p>
+<div class="footer-badge">🏫 E.N.E.L.C. · Putla Villa de Guerrero, Oaxaca · 50 Aniversario</div>
+<p style="margin-top:10px;font-size:.72rem;color:#8BAFD4">Licenciatura en Educación Primaria · 2° Grado · 2025</p>
 </footer>
 <!-- ══════════════════════════════════════════════════════════════
      MODAL
